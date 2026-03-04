@@ -1,0 +1,36 @@
+@use "@sass/base/variables" as v;
+
+.description_btn {
+  margin-top: auto; // Pushes button to the bottom of the card
+  background: none;
+  border: 1px solid v.$accent_color;
+  color: v.$accent_color;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: v.$font_ui_elements;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: v.$accent_color;
+    color: #fff;
+  }
+}
+
+.description_div {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed v.$border_color;
+  font-style: italic;
+  font-size: 0.9rem;
+  
+  &.hidden {
+    display: none;
+  }
+}
+
+// Style for the loader inside the cards
+.loader {
+  margin: 10px 0;
+}

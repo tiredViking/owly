@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { OpenLibraryService } from '../src/services/api.service.js';
+import { OpenLibraryService } from '@/services/api.service.js';
 
 describe('OpenLibraryService', () => {
   it('dovrebbe gestire descrizioni sia come stringa che come oggetto', async () => {

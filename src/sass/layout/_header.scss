@@ -1,0 +1,14 @@
+@use "@sass/base/variables" as v;
+
+header {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  transition: all 0.4s ease;
+
+  // When searching, minimize the header to let the form take over the top
+  body.has_searched & {
+    padding: 5px 0;
+    margin-bottom: 0;
+  }
+}

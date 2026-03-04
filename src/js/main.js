@@ -1,6 +1,6 @@
-import { OpenLibraryService } from './src/services/api.service.js';
-import { createBookCard } from './src/ui/components.js';
-import { UIRenderer } from './src/ui/render.js';
+import { OpenLibraryService } from '@js/services/api.service.js';
+import { createBookCard } from '@js/ui/components.js';
+import { UIRenderer } from '@js/ui/render.js';
 
 const searchForm = document.forms["search_form"];
 const searchInput = document.querySelector("#search_bar");
@@ -56,3 +56,4 @@ resultSection.addEventListener("click", async (e) => {
     }
   }
 });
+

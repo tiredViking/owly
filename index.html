@@ -2,12 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>app_owly</title>
+    <link rel="stylesheet" href="/src/sass/main.scss">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- HEADER -->
+    <header>
+      <!-- NAV -->
+      <nav></nav>
+    
+    </header>
+    
+    <!-- MAIN -->
+    <main>
+    
+      <!-- form section -->
+      <section id="form_section">
+        <!-- FORM -->
+        <form name="search_form">
+          <label for="search_bar">Ricerca:</label>
+          <input type="search" id="search_bar" name="search_bar" placeholder="Genere">
+    
+          <input type="submit" id="submit_btn" name="submit_btn" value="Cerca">
+        </form>
+      </section>
+      <!-- result section -->
+      <section id="show_result_section">
+      </section>
+    
+    </main>
+    <script type="module" src="/src/js/main.js" defer></script>
   </body>
 </html>

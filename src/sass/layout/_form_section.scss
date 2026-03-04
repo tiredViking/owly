@@ -1,0 +1,78 @@
+@use "@sass/base/variables" as v;
+@use "@sass/base/mixins" as mix;
+
+#form_section {
+  min-width: 80vw;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: v.$background_color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  // INITIAL STATE: Centered "Hero" look
+  &:not(.has_searched) {
+    align-items: center;
+
+    .div_loader_string {
+      display: none;
+    }
+  }
+
+  form[name="search_form"] {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    gap: 12px;
+
+    label {
+      display: none; // Hidden for aesthetics, kept for screen readers
+    }
+
+    input[type="search"] {
+      flex: 1;
+      padding: 12px 24px;
+      border: 1px solid v.$input_border;
+      background-color: #ffffff;
+      border-radius: 30px;
+      font-family: v.$font_ui_elements;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.2s;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1); // Subtle accent glow
+        border-color: v.$accent_color;
+      }
+    }
+
+    input[type="submit"] {
+      padding: 0 25px;
+      background-color: v.$accent_color;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: v.$font_ui_elements;
+      font-weight: bold;
+      transition: transform 0.1s, opacity 0.2s;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+// SEARCHED STATE: Sticky bar at the top
+body.has_searched #form_section {
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-bottom: 2px solid v.$border_color !important;
+}
+
