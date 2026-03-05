@@ -3,22 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>app_owly</title>
-    <link rel="stylesheet" href="/src/sass/main.scss">
+    <title>Owly</title>
+    <link rel="stylesheet" href="src/sass/main.scss">
+		
+		<!--FAVICON-->
+		<link rel="icon" type="image/png" href="public/img/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="public/img/favicon.svg" />
+		<link rel="shortcut icon" href="public/img/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="public/img/apple-touch-icon.png" />
+		<link rel="manifest" href="public/img/site.webmanifest" />
   </head>
   <body>
     <!-- HEADER -->
     <header>
-      <!-- NAV -->
-      <nav></nav>
+
+			<!--hero section -->
+    <section class="hero_content">
+			<h1>Owly</h1>
+			<p>Scopri il tuo prossimo libro. Digita un genere letterario per esplorare la biblioteca digitale di OpenLibrary.</p>
+  </section>
     
     </header>
     
     <!-- MAIN -->
     <main>
-    
+
       <!-- form section -->
       <section id="form_section">
+ 
+				<!-- logo -->
+				<a href="/" id="main_logo" class="logo_link" aria-label="Owly - Back to homepage">
+					<img src="public/img/logo.png" alt="" role="presentation" class="logo_img">
+				</a>
+
         <!-- FORM -->
         <form name="search_form">
           <label for="search_bar">Ricerca:</label>

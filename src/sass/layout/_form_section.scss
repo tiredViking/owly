@@ -4,16 +4,32 @@
 #form_section {
   min-width: 80vw;
   display: flex;
-  justify-content: center;
-  padding: 20px 20px;
+  justify-content: space-around;
+  padding: 35px 20px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: v.$background_color;
   position: sticky;
   top: 0;
   z-index: 100;
 
+  .logo_link {
+    display: none; // Nascosto di base
+    align-items: center;
+    flex-shrink: 0;
+
+    .logo_img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
   // INITIAL STATE: Centered "Hero" look
-  &:not(.has_searched) {
+  body:not(.has_searched) {
     align-items: center;
 
     .div_loader_string {
@@ -73,6 +89,12 @@
 body.has_searched #form_section {
   padding: 15px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  border-bottom: 2px solid v.$border_color !important;
+  justify-content: center;
+  padding-left: auto;
+
+  .logo_link{
+    display: flex;
+  }
+  
 }
 

@@ -5,10 +5,37 @@ header {
   padding: 15px 0;
   text-align: center;
   transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+
+  .hero_content {
+    max-width: 700px;
+    margin: 0 auto 0 auto;
+
+    h1 {
+      font-family: v.$font_family_serif;
+      font-size: 3.5rem;
+      color: v.$accent_color;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: v.$text_color;
+    }
+  }
 
   // When searching, minimize the header to let the form take over the top
   body.has_searched & {
     padding: 5px 0;
     margin-bottom: 0;
+
+    .hero_content {
+      opacity: 0;
+      max-height: 0;
+      margin: 0;
+      pointer-events: none;
+    }
   }
 }

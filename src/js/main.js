@@ -2,58 +2,66 @@ import { OpenLibraryService } from '@js/services/api.service.js';
 import { createBookCard } from '@js/ui/components.js';
 import { UIRenderer } from '@js/ui/render.js';
 
-const searchForm = document.forms["search_form"];
-const searchInput = document.querySelector("#search_bar");
-const resultSection = document.querySelector("#show_result_section");
+const search_form = document.forms["search_form"];
+const search_input = document.querySelector("#search_bar");
+const result_section = document.querySelector("#show_result_section");
+const logo = document.getElementById("main_logo");
 
 // Gestione Ricerca
-searchForm.addEventListener("submit", async (e) => {
+search_form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const genre = searchInput.value.trim().toLowerCase();
+  const genre = search_input.value.trim().toLowerCase();
   if (!genre) return;
 
-  UIRenderer.renderLoader(resultSection);
+	document.body.classList.add("has_searched");
+
+  UIRenderer.renderLoader(result_section);
 
   try {
     const works = await OpenLibraryService.getWorksByGenre(genre);
-    UIRenderer.clearContainer(resultSection);
+    UIRenderer.clearContainer(result_section);
     
     works.forEach(book => {
-      resultSection.insertAdjacentHTML('beforeend', createBookCard(book));
+      result_section.insertAdjacentHTML('beforeend', createBookCard(book));
     });
   } catch (error) {
-    resultSection.innerHTML = "Errore durante la ricerca.";
+    result_section.innerHTML = "Errore durante la ricerca.";
     console.error(error);
   }
 });
 
 // Event Delegation per Titolo e Bottone
-resultSection.addEventListener("click", async (e) => {
-  const isTitle = e.target.classList.contains("book_title");
-  const isBtn = e.target.classList.contains("description_btn");
+result_section.addEventListener("click", async (e) => {
+  const is_title = e.target.classList.contains("book_title");
+  const is_btn = e.target.classList.contains("description_btn");
 
-  if (isTitle || isBtn) {
+  if (is_title || is_btn) {
     const card = e.target.closest(".card");
     const btn = card.querySelector(".description_btn");
-    const descDiv = card.querySelector(".description_div");
-    const descText = card.querySelector(".description_txt");
+    const desc_div = card.querySelector(".description_div");
+    const desc_text = card.querySelector(".description_txt");
     const key = btn.dataset.bookKey;
 
     // Toggle visibilità
-    const isHidden = descDiv.classList.toggle("hidden");
-    btn.textContent = isHidden ? "Mostra descrizione" : "Nascondi descrizione";
+    const is_hidden = desc_div.classList.toggle("hidden");
+    btn.textContent = is_hidden ? "Mostra descrizione" : "Nascondi descrizione";
 
     // Caricamento Lazy della descrizione
     if (btn.dataset.loaded === "false") {
-      descText.innerHTML = "Caricamento...";
+      desc_text.innerHTML = "Caricamento...";
       try {
         const description = await OpenLibraryService.getBookDescription(key);
-        descText.textContent = description;
+        desc_text.textContent = description;
         btn.dataset.loaded = "true";
       } catch (err) {
-        descText.textContent = "Errore nel caricamento.";
+        desc_text.textContent = "Errore nel caricamento.";
       }
     }
   }
 });
 
+// Gestione logo
+logo.addEventListener("click", (e) => {
+	e.preventDefault();
+	window.location.reload();
+})

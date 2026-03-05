@@ -36,6 +36,10 @@
     margin-bottom: 20px;
     line-height: 1.6;
     color: v.$text_muted; 
+    
+    .description_txt {
+      margin-bottom: auto;
+    }
   }
 
   .author_link {
