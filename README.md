@@ -1,5 +1,5 @@
 # Owly 🦉 | Book Explorer
-## tiredViking.github.io/owly
+## [tiredViking.github.io/owly](https://tiredViking.github.io/owly)
 
 This project was created for Start2Impact JavaScript course; it features a web application designed for exploring books by genre via the OpenLibrary API. It combines a classic "library" aesthetic with a modular JavaScript architecture.
 
