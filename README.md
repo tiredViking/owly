@@ -1,4 +1,5 @@
 # Owly 🦉 | Book Explorer
+## tiredViking.github.io/owly
 
 This project was created for Start2Impact JavaScript course; it features a web application designed for exploring books by genre via the OpenLibrary API. It combines a classic "library" aesthetic with a modular JavaScript architecture.
 
@@ -20,22 +21,22 @@ Why Service Pattern?
 - Testing: Vitest - Automated unit tests for data-fetching functions;
 
 ## Project main structure
+```
 index.html
 src/
 ├── js/
 │   ├── services/       # Service Pattern: API & Data Logic
 │   ├── ui/             # View Layer: Rendering & Components
 │   └── main.js         # Entry Point: Event Delegation & Orchestration
-├── sass/               
+├── sass/
+│   ├── main.scss       # Global styles and orchestration
 │   ├── base/           # Variables, Mixins. 
 │   ├── components/     # Cards, Buttons, Interactive elements
 │   └── layout/         # Section-specific styles
-└── tests/              # Vitest 
+└── tests/              # Vitest suite
 public/
 └── img/                # Favicons and logo             
-
-
-
+```
 
 ## Getting Started
 
@@ -49,5 +50,5 @@ public/
 ### Testing:
     npm run test
 
-### Buid:
+### Build:
     npm run build
