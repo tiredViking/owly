@@ -41,7 +41,7 @@ public/
 ## Getting Started
 
 ###  Clone & Install:
-    git clone [your-repo-link]
+    git clone https://github.com/tiredViking/owly.git
     npm install
 
 ### Development:
