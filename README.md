@@ -20,8 +20,6 @@ Why Service Pattern?
 - Testing: Vitest - Automated unit tests for data-fetching functions;
 
 ## Project main structure
-All the main components of the project fall under the src/ folder:
-
 index.html
 src/
 ├── js/
@@ -50,3 +48,6 @@ public/
 
 ### Testing:
     npm run test
+
+### Buid:
+    npm run build
