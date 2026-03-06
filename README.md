@@ -33,7 +33,7 @@ src/
 │   ├── base/           # Variables, Mixins. 
 │   ├── components/     # Cards, Buttons, Interactive elements
 │   └── layout/         # Section-specific styles
-└── tests/              # Vitest suite
+tests/                  # Vitest suite
 public/
 └── img/                # Favicons and logo             
 ```
